@@ -1,6 +1,9 @@
-﻿$("#calcGrade").click(function () {
-    var gradePct = (parseFloat($("#assign").val()) * .5 + parseFloat($("#quiz").val()) * .1 + parseFloat($("#group").val()) * .1 + parseFloat($("#intex").val()) * .1 + parseFloat($("#midterm").val()) * .1 + parseFloat($("#final").val()) * .1 )
+﻿// calculate grade function that uses form inputs to determine grade
+$("#calcGrade").click(function () {
+    // add all inputs together and multiply them by their grade weights
+    var gradePct = (parseFloat($("#assign").val()) * .5 + parseFloat($("#quiz").val()) * .1 + parseFloat($("#group").val()) * .1 + parseFloat($("#intex").val()) * .1 + parseFloat($("#midterm").val()) * .1 + parseFloat($("#final").val()) * .1)
 
+    // find letter grade based on grade percentage
     var letterGrade
     if (gradePct >= 94 && gradePct < 100) {
         letterGrade = "A"
@@ -39,5 +42,6 @@
         letterGrade = "E"
     }
 
-    document.getElementById('gradeOutput').textContent = gradePct + "%" + " " + letterGrade
+    // print number and letter grade
+    document.getElementById('gradeOutput').textContent = gradePct + "% " + " " + letterGrade
 })
