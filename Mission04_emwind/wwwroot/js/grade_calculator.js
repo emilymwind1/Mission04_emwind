@@ -5,7 +5,7 @@ $("#calcGrade").click(function () {
 
     // find letter grade based on grade percentage
     var letterGrade
-    if (gradePct >= 94 && gradePct < 100) {
+    if (gradePct >= 94) {
         letterGrade = "A"
     }
     else if (gradePct >= 90) {
@@ -42,6 +42,6 @@ $("#calcGrade").click(function () {
         letterGrade = "E"
     }
 
-    // print number and letter grade
+    // print number and letter grade 
     document.getElementById('gradeOutput').textContent = gradePct + "% " + " " + letterGrade
 })
